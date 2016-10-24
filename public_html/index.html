@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Archive Experiments</title>
+<meta name="description" content="A showcase of community made experiments built with data and services from Archive.org">
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="author" content="@mrmrs">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tachyons.css">
+<style>
+
+  a, footer a { color: rgb(85, 85, 85); }
+  h3.f5 { color: black; }
+  h3.f6 { color: #666; }
+  /*.border-top {border-top:4px solid #1a82f7 };*/
+  .border-top {border-top:8px solid rgb(85, 85, 85); };
+  .blue { color: #0074D9; }
+  .bg-blue { background-color: #0074D9; }
+
+  .carbon-poweredby { width: 100%; font-size: 12px; float: left; }
+  .carbon-wrap { float: left; width: 100%; box-sizing: border-box; }
+  .carbon-img  { float: left; width: 50%;  box-sizing: border-box; }
+  .carbon-text  { float: left; width: 50%; padding-left: 16px; box-sizing: border-box; font-size: 12px; }
+
+  #carbonads a:link { text-decoration: none!important; color: #222!important; }
+  .grey-bg { background-color: #101013; background: white; }
+
+  .testBgX {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#898989+0,c9c9c9+100 */
+    background: rgb(137,137,137); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(137,137,137,1) 0%, rgba(201,201,201,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(137,137,137,1) 0%,rgba(201,201,201,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(137,137,137,1) 0%,rgba(201,201,201,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#898989', endColorstr='#c9c9c9',GradientType=0 ); /* IE6-9 */
+  }
+
+  .linearBg2 {
+    /* fallback */
+    background-color: #1a82f7;
+    background: url(images/linear_bg_2.png);
+    background-repeat: repeat-x;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2F2727));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #2F2727, #1a82f7);
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #2F2727, #1a82f7);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #2F2727, #1a82f7);
+  }
+
+  #scene  {
+  	margin:0 auto;
+  	height:400px;
+  	width:400px;
+  	padding:5px;
+  	background:transparent;
+  	-webkit-perspective: 500px;
+  	perspective: 500px;
+  }
+  #object {
+    display:inline-block;
+  	margin:0 0;
+  	height:300px;
+  	width:300px;
+  	-webkit-transform-style: preserve-3d;
+  	transform-style: preserve-3d;
+  	-webkit-animation: rotateCube 20s linear infinite;
+  	animation: rotateCube 20s linear infinite;
+  }
+  #face1 {
+  	width:100px;
+  	height:100px;
+  	background:url(https://blog.archive.org/wp-content/uploads/2015/03/ia-logo-220x221-150x150.png);
+    background-size:cover;
+  	margin:100px;
+  	-webkit-transform:translateZ(110px);
+  	transform:translateZ(110px);
+  }
+  #face2 {
+  	width:100px;
+  	height:100px;
+    background:url(https://blog.archive.org/wp-content/uploads/2015/03/ia-logo-220x221-150x150.png);
+    background-size:cover;
+    margin:100px;
+  	-webkit-transform:rotateX(90deg) translateY(55px) translateZ(145px);
+  	transform:rotateX(90deg) translateY(55px) translateZ(145px);
+  }
+  #face3 {
+  	width:100px;
+  	height:100px;
+    background:url(https://blog.archive.org/wp-content/uploads/2015/03/ia-logo-220x221-150x150.png);
+    background-size:cover;
+  	margin:100px;
+  	-webkit-transform:rotateX(90deg) translateY(55px) translateZ(455px);
+  	transform:rotateX(90deg) translateY(55px) translateZ(455px);
+  }
+  #face4 {
+  	width:100px;
+  	height:100px;
+    background:url(https://blog.archive.org/wp-content/uploads/2015/03/ia-logo-220x221-150x150.png);
+    background-size:cover;
+  	margin:100px;
+  	-webkit-transform:rotateX(90deg) translateX(55px) translateY(55px) translateZ(600px) rotateY(90deg);
+  	transform:rotateX(90deg) translateX(55px) translateY(55px) translateZ(600px) rotateY(90deg);
+  }
+  #face5 {
+  	width:100px;
+  	height:100px;
+    background:url(https://blog.archive.org/wp-content/uploads/2015/03/ia-logo-220x221-150x150.png);
+    background-size:cover;
+  	margin:100px;
+  	-webkit-transform:rotateX(90deg) translateX(-55px) translateY(55px) translateZ(800px) rotateY(90deg);
+  	transform:rotateX(90deg) translateX(-55px) translateY(55px) translateZ(800px) rotateY(90deg);
+  }
+  #face6 {
+  	width:100px;
+  	height:100px;
+    background:url(https://blog.archive.org/wp-content/uploads/2015/03/ia-logo-220x221-150x150.png);
+    background-size:cover;
+  	-webkit-transform:translateY(-1000px) translateX(100px) translateZ(-5px);
+  	transform:translateY(-1000px) translateX(100px) translateZ(-5px);
+  }
+  /* rotating 3d cube */
+  @keyframes rotateCube {
+  	0% {transform:rotateX(60deg) rotateY(340deg) rotateZ(50deg);}
+  	100% {transform:rotateX(60deg) rotateY(340deg) rotateZ(410deg);}
+  }
+  @-webkit-keyframes rotateCube {
+  	0% {-webkit-transform:rotateX(60deg) rotateY(340deg) rotateZ(50deg);}
+  	100% {-webkit-transform:rotateX(60deg) rotateY(340deg) rotateZ(410deg);}
+  }
+
+.object-wrapper-wrapper {
+  width: 100%;
+  height: 240px;
+  overflow:hidden;
+  text-align:center;
+}
+.object-wrapper {
+  height: 240px;
+  position:relative;
+  top:10px;
+  right:-10px;
+}
+@media (min-width:800px) {
+  .object-wrapper-wrapper {
+    width: 240px;
+    height: 240px;
+    position:absolute;
+    top: 0;
+    right:0;
+  }
+  .object-wrapper {
+    position:relative;
+    top:20px;
+    right:-30px;
+  }
+}
+
+/* http://codepen.io/mchlshlds/pen/CFyfE*/
+
+
+</style>
+
+</head>
+  <body class="w-100 sans-serif black helvetica grey-bg linearBg2X testBg  ">
+    <main class="bg-light-gray">
+      <article class="cf pa3 mw9 center">
+        <div class="cf w-100 pa5-l mw9 center">
+          <div class="w-100 w-90-l">
+
+            <div class="object-wrapper-wrapper">
+              <div class="object-wrapper fr-l center">
+                <div id="object" class="d-inline">
+                  <div id="face1"></div>
+                  <div id="face2"></div>
+                  <div id="face3"></div>
+                  <div id="face4"></div>
+                  <div id="face5"></div>
+                  <div id="face6"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <p class="f3 mb0">
+                Internet Archive
+              </p>
+              <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns">
+                Experiments
+              </h1>
+            </div>
+          </div>
+
+          <h2 class="lh-title f3 normal mt0 measure">
+            A showcase of community made experiments built with data and services from
+            <a class="" href="https://archive.org">Archive.org</a>.
+          </h2>
+
+        </div>
+      </article>
+    </main>
+    <main>
+
+      <!--
+      <section class="cf w-100 pa2-ns">
+        <h3 class="lh-title f4 mt0 pa2">
+          Featured Experiments
+        </h2>
+        <article class="fl w-100 w-100-m  w-50-ns pa2">
+          <div class="aspect-ratio aspect-ratio--6x4">
+            <img style="background-image:url(http://mrmrs.io/images/0006.jpg);"
+            class="db bg-center cover aspect-ratio--object" />
+          </div>
+          <a href="#0" class="ph2 ph0-ns pb3 link db">
+            <h3 class="f5 f4-ns mb0">Grovebox</h3>
+            <h3 class="f6 fw4 mt2">Subtitle of piece</h3>
+          </a>
+        </article>
+        <article class="fl w-100 w-100-m  w-50-ns pa2">
+          <div class="aspect-ratio aspect-ratio--6x4">
+            <img style="background-image:url(http://mrmrs.io/images/0002.jpg);"
+            class="db bg-center cover aspect-ratio--object" />
+          </div>
+          <a href="#0" class="ph2 ph0-ns pb3 link db">
+            <h3 class="f5 f4-ns mb0">Project X</h3>
+            <h3 class="f6 fw4 mt2">Top secret</h3>
+          </a>
+        </article>
+      </section>
+      -->
+
+      <section class="cf w-100 pa2-ns mw9 center">
+        <h3 class="lh-title f3 pa2 ">Featured Experiments</h3>
+
+        <article class="fl w-100 w-50-m w-25-ns pa2">
+          <a href="http://deletedcity.net" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/ia-placeholder.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">The New Memory Palace</h3>
+            <h3 class="f6 fw4 mt2">By Paul D. Miller aka Dj Spooky</h3>
+          </a>
+        </article>
+        <article class="fl w-100 w-50-m w-25-ns pa2">
+          <a href="http://deletedcity.net" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/deleted-city.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">Deleted City</h3>
+            <h3 class="f6 fw4 mt2">by Richard Vijgen</h3>
+          </a>
+        </article>
+        <article class="fl w-100 w-50-m  w-25-ns pa2">
+          <a href="http://www.bampfa.org/program/gif-collider-10" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/gif-collider.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">GIF Collider</h3>
+            <h3 class="f6 fw4 mt2">by Greg Niemeyer &amp; Vinay Goel</h3>
+          </a>
+        </article>
+
+        <article class="fl w-100 w-50-m  w-25-ns pa2">
+          <a href="http://gifcities.org" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/gifcities.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">GifCities</h3>
+            <h3 class="f6 fw4 mt2">by Vinay Goel, Richard Caceres &amp; Jefferson Bailey</h3>
+          </a>
+        </article>
+      </section>
+
+      <section class="cf w-100 pa2-ns mw9 center">
+        <article class="fl w-100 w-50-m w-25-ns pa2">
+          <a href="#0" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/ia-placeholder.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">Cyberspace</h3>
+            <h3 class="f6 fw4 mt2">Owen Cornec &amp; Vinay Goel</h3>
+          </a>
+        </article>
+        <article class="fl w-100 w-50-m w-25-ns pa2">
+          <a href="details/headlines.html" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/headlines.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">Headlines</h3>
+            <h3 class="f6 fw4 mt2">Vinay Goel</h3>
+          </a>
+        </article>
+      </section>
+
+
+      <section class="cf w-100 pa2-ns mw9 center mt3">
+        <h3 class="lh-title f3 pa2 ">All Experiments</h3>
+
+
+        <article class="fl w-100 w-50-m w-25-ns pa2">
+          <a href="https://groovebox.org" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/groovebox.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">Groovebox.org</h3>
+            <h3 class="f6 fw4 mt2">by Mek Karpeles</h3>
+          </a>
+        </article>
+        <article class="fl w-100 w-50-m w-25-ns pa2">
+          <a href="https://pages.archivelab.org" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/ia-placeholder.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">Archive Pages</h3>
+            <h3 class="f6 fw4 mt2">by Richard Caceres</h3>
+          </a>
+        </article>
+        <article class="fl w-100 w-50-m w-25-ns pa2">
+          <a href="https://archive.org/~richard/fakebooks" class="ph2 ph0-ns link db">
+            <div class="aspect-ratio aspect-ratio--6x4">
+              <img style="background-image:url(assets/fakebooks.jpg);"
+              class="db bg-center cover aspect-ratio--object" />
+            </div>
+            <h3 class="f5 f4-ns mb0">Fakebook Browser</h3>
+            <h3 class="f6 fw4 mt2">by Richard Caceres</h3>
+          </a>
+        </article>
+
+      </section>
+
+    </main>
+
+
+    <footer class="ph3 ph4-ns mt5 pv4 bt b--black-10 bt1 bg-light-gray">
+      <div class="submit-line">
+        If you have an experiment you want submit,
+        <script type="text/javascript">
+        //http://hivelogic.com/enkoder/index.php
+        //<![CDATA[
+        <!--
+        var x="function f(x){var i,o=\"\",l=x.length;for(i=l-1;i>=0;i--) {try{o+=x.c" +
+        "harAt(i);}catch(e){}}return o;}f(\")\\\"function f(x,y){var i,o=\\\"\\\\\\\""+
+        "\\\\,l=x.length;for(i=0;i<l;i++){if(i>(5+y))y*=2;y%=127;o+=String.fromCharC" +
+        "ode(x.charCodeAt(i)^(y++));}return o;}f(\\\"\\\\aid}doex#y}yew\\\\\\\\177z=" +
+        "4+y9riy{#C\\\\\\\\002LCJHQI\\\\\\\\035Z@ICM_J\\\\\\\\004UIBVF\\\\\\\\\\\\\\" +
+        "\\[RVMI{]O]W)7'm+7!x;<(!).:r\\\\\\\\025)\\\\\\\\\\\"\\\\6&<;26-){\\\\\\\\01" +
+        "7(<2\\\\\\\\t\\\\\\\\022\\\\\\\\021\\\\\\\\n\\\\\\\\013\\\\\\\\013:EH\\\\\\" +
+        "\\035\\\\\\\\003\\\\\\\\037\\\\\\\\000\\\\\\\\010S3R\\\\\\\\\\\"\\\\\\\\\\\\"+
+        "007\\\\\\\\021\\\\\\\\031\\\\\\\\034\\\\\\\\002W\\\\\\\\031\\\\\\\\027Z\\\\" +
+        "\\\\036\\\\\\\\004\\\\\\\\r\\\\\\\\033rkkkpJ\\\\\\\\\\\"\\\\\\\\\\\\\\\"\\\\"+
+        "<jkj\\\\\\\\036\\\\\\\\013s\\\\\\\\\\\"\\\\m`qIB/c8,7\\\\\\\\005N;\\\"\\\\," +
+        "5)\\\"(f};)lo,0(rtsbus.o nruter};)i(tArahc.x=+o{)--i;0=>i;1-l=i(rof}}{)e(hc" +
+        "tac};l=+l;x=+x{yrt{)84=!)31/l(tAedoCrahc.x(elihw;lo=l,htgnel.x=lo,\\\"\\\"=" +
+        "o,i rav{)x(f noitcnuf\")"                                                    ;
+        while(x=eval(x));
+        //-->
+        //]]>
+        </script>
+
+      </div>
+      <div class="mt3">
+
+      </div>
+
+      <div class="mt3">
+        <a href="https://archive.org" title="Language" class="f6 dib pr2 mid-gray dim">Archive.org</a>
+        <a href="https://archivelab.org"    title="Terms" class="f6 dib ph2 mid-gray dim">Archive Labs</a>
+      </div>
+    </footer>
+  </body>
+</html>
