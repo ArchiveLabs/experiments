@@ -5,89 +5,9 @@
 <meta name="description" content="A showcase of community made experiments built with data and services from Archive.org">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="author" content="@mrmrs">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="tachyons.css">
-<style>
-  a, footer a { color: rgb(85, 85, 85); }
-  h3.f5 { color: black; }
-  h3.f6 { color: #666; }
-  /*.border-top {border-top:4px solid #1a82f7 };*/
-  .border-top {border-top:8px solid rgb(85, 85, 85); };
-  .blue { color: #0074D9; }
-  .bg-blue { background-color: #0074D9; }
-  .grey-bg { background-color: #101013; background: white; }
-  .ia-bg {
-    background:url(assets/ia-logo.png);
-    background-size:cover;
-  }
-  #cube {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    top: 60px;
-    display: inline-block;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-animation: rotateCube 20s linear infinite;
-    animation: rotateCube 20s linear infinite;
-  }
-  #cube figure {
-    margin: 0;
-    width: 100px;
-    height: 100px;
-    display: block;
-    position: absolute;
-  }
-
-  .object-wrapper-wrapper {
-    width: 100%;
-    height: 240px;
-    overflow:hidden;
-    text-align:center;
-  }
-  .object-wrapper {
-    height: 240px;
-    position:relative;
-    top:10px;
-    right:0;
-    perspective: 0;
-    text-align:center;
-  }
-  @media (min-width:800px) {
-    .object-wrapper-wrapper {
-      width: 240px;
-      height: 240px;
-      position:absolute;
-      top: 0;
-      right:0;
-    }
-    .object-wrapper {
-      position:relative;
-      top:20px;
-      right:0px;
-    }
-  }
-
-  #cube .front  { transform: rotateY(   0deg ) translateZ( 52px ); }
-  #cube .back   { transform: rotateX( 180deg ) rotateZ( 180deg ) translateZ( 54px ); }
-  #cube .right  { transform: rotateY(  90deg ) rotateZ( -90deg ) translateZ( 54px ); }
-  #cube .left   { transform: rotateY( -90deg ) rotateZ( 90deg ) translateZ( 54px ); }
-  #cube .top    { transform: rotateX(  90deg ) rotateZ( -180deg ) translateZ( 54px ); }
-  #cube .bottom { transform: rotateX( -90deg ) translateZ( 52px ); }
-
-  /* rotating 3d cube */
-  @keyframes rotateCube {
-    0% {transform:rotateX(60deg) rotateY(340deg) rotateZ(50deg);}
-    100% {transform:rotateX(60deg) rotateY(340deg) rotateZ(410deg);}
-  }
-  @-webkit-keyframes rotateCube {
-    0% {-webkit-transform:rotateX(60deg) rotateY(340deg) rotateZ(50deg);}
-    100% {-webkit-transform:rotateX(60deg) rotateY(340deg) rotateZ(410deg);}
-  }
-</style>
-
+<link rel="stylesheet" href="main.css">
 </head>
   <body class="w-100 sans-serif black helvetica grey-bg ">
     <main class="bg-light-gray">
@@ -116,7 +36,7 @@
             <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns">
               Experiments
             </h1>
-            <h2 class="lh-title f3 normal mt0 measure">
+            <h2 class="lh-title f3 normal mt0">
               A showcase of community made experiments built with data and services from
               <a class="" href="https://archive.org">Archive.org</a>.
             </h2>
@@ -125,8 +45,19 @@
         </div>
       </article>
     </main>
-    <main>
 
+    <main class="bg-black light-silver">
+      <section class="cf w-100 ph2 mw9 center">
+        <div class="ph2 pv4 f3 f2-ns lh-title-ns">
+          <!--<span class="code gray">--&gt;</span>&nbsp;&nbsp;-->Join us <span class="white">September 23</span> (in SF or remote) for an <span class="white">Archive Experiments Hackathon</span>.
+          <br class="">
+          <br class="dn-l">
+           Register on <a class="orange" href="https://www.eventbrite.com/e/internet-archive-experiments-hackathon-2017-tickets-37012125263">Eventbrite</a></a> and see <a class="blue" href="/hackathon">/hackathon</a> for more info.
+        </div>
+      </section>
+    </main>
+
+    <main>
       <section class="cf w-100 pa2-ns mw9 center">
         <h3 class="lh-title f3 pa2 ">Featured Experiments</h3>
 
