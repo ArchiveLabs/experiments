@@ -19,8 +19,7 @@ h3.f6 { color: #666; }
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-animation: rotateCube 20s linear infinite;
-  animation: rotateCube 20s linear infinite;
+  transform:rotateX(60deg) rotateY(340deg) rotateZ(50deg);
 }
 #cube figure {
   margin: 0;
@@ -67,14 +66,14 @@ h3.f6 { color: #666; }
 #cube .bottom { transform: rotateX( -90deg ) translateZ( 52px ); }
 
 /* rotating 3d cube */
-@keyframes rotateCube {
+/*@keyframes rotateCube {
   0% {transform:rotateX(60deg) rotateY(340deg) rotateZ(50deg);}
   100% {transform:rotateX(60deg) rotateY(340deg) rotateZ(410deg);}
 }
 @-webkit-keyframes rotateCube {
   0% {-webkit-transform:rotateX(60deg) rotateY(340deg) rotateZ(50deg);}
   100% {-webkit-transform:rotateX(60deg) rotateY(340deg) rotateZ(410deg);}
-}
+}*/
 
 a.blue:hover { color: #96ccff; }
 
