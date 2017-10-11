@@ -79,3 +79,31 @@ h3.f6 { color: #666; }
 a.blue:hover { color: #96ccff; }
 
 .w4-5 { width: 6rem; }
+
+.grid {
+  max-width: 40em;
+}
+
+.grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  grid-gap: 1.5em;
+}
+
+@supports (display: grid) {
+  .grid {
+    max-width: 144rem;
+    padding: 1em;
+
+  }
+}
+
+@media (max-width:32rem) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    grid-gap: .25rem;
+
+  }
+
+}
