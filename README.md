@@ -11,7 +11,7 @@ https://archive.org/details/ArchiveExperiments
 
 ```
 cd public_html
-ia upload ArchiveExperiments ./
+ia upload ArchiveExperiments ./ --checksum
 ```
 
 Note you need to be an admin of the `archivelabs` collection.
